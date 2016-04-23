@@ -1,4 +1,4 @@
-# ecb-sac-final-app
+# Ecb Sac Front End Client
 This is Student Activity Center designed to help the student of Engineering College Bikaner to easily get information about the Upcoming event.
 ##How to run the app
 1. `git clone` the repository to your local machine.
