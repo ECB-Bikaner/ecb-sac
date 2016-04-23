@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ng-app="sac">
+<head>
+	<title>ECB | SAC</title>
+	<!-- Setting the right viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta content="text/html; charset=utf-8">
+
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="./dists/animate.css">
+  	<!-- user defined css -->
+	<link rel="stylesheet" type="text/css" href="./stylesheets/master.css">
+</head>
+
+<body class="animated fadeIn" style="background-color: #eee">
+	<div class="navbar-fixed">
+
+	<!-- Dropdown Structure -->
+	<ul id="dropdown1" class="dropdown-content">
+	  <li><a href="#/0/0">Electrop..</a></li>
+	  <li><a href="#/0/3">Robotics</a></li>
+	  <li><a href="#/0/5">Tech Club</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#/1/1">Fiducia</a></li>
+	  <li><a href="#/1/2">MAD</a></li>
+	  <li><a href="#/1/4">SCHED</a></li>
+	</ul>
+
+	<nav ng-controller="HeaderCtrl" style="background-color:black">
+		<div class="nav-wrapper blue-grey darken-2">
+			<div class="container">
+				<a href="#/home" class="brand-logo left home-brand-logo">SAC</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse right home-hamburger-menu"><i class="material-icons"> menu </i></a>
+				<ul class="right hide-on-med-and-down">
+			    	<li><a href="#/home">Home</a></li>
+			    	<li><a href="#/gallery">Gallery</a></li>
+			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="#/edit_event">{{auth.profile.nickname}}</a></li>
+			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/home">Log In</a></li>
+			    	<li ng-controller="UserInfoCtrl"  ng-show="auth.profile"><a href="#/edit_event">Create Event</a></li>
+			    	<li ng-controller="LoginCtrl" ng-show="auth.profile"><a ng-click="logout()" href="">Log out</a></li>
+			    	<!-- Dropdown Trigger -->
+      				<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Clubs<i class="material-icons right">arrow_drop_down</i></a></li>
+			    </ul>
+			  	<ul class="side-nav" id="mobile-demo">
+			  		<li><a href="#/home">Home</a></li>
+			    	<li><a href="#/gallery">Gallery</a></li>
+			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="#/edit_event">{{auth.profile.nickname}}</a></li>
+					<li class="divider"></li>
+			    	<li><a href="#/0/0">Electroparichay</a></li>
+					<li><a href="#/0/3">Robotics</a></li>
+					<li><a href="#/0/5">Tech Club</a></li>
+					<li><a href="#/1/1">Fiducia</a></li>
+					<li><a href="#/1/2">MAD</a></li>
+					<li><a href="#/1/4">SCHED</a></li>
+					<li class="divider"></li>
+			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/home">Log In</a></li>
+			    	<li ng-controller="UserInfoCtrl"  ng-show="auth.profile"><a href="#/edit_event">Create Event</a></li>
+			    	<li ng-controller="LoginCtrl" ng-show="auth.profile"><a ng-click="logout()" href="">Log out</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	</div>
+	
+	<div ui-view class="animated fadeIn"></div>
+
+    <footer class="page-footer blue-grey darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">ECB SAC</h5>
+            <p class="grey-text text-lighten-4"></p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright black">
+        <div class="container">
+        &copy 2016 Copyright ECB SAC. MIT Licence. 
+        <a class="grey-text text-lighten-4 right">Created By Atul Sharma, Ishan Saxena, Lalit Kishor & Rajat Patwa.</a>
+        </div>
+      </div>
+    </footer>
+
+
+
+	<script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.9.1/jquery.nanogallery.min.js"></script>
+  	<script type="text/javascript">
+		$( document ).ready(function(){
+			$('.button-collapse').sideNav({
+			    edge: 'right', // Choose the horizontal origin
+			    closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+			});
+			$(".dropdown-button").dropdown();
+		})
+	</script>
+
+  	<!-- Angular Dependencies -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+  	<script type="text/javascript" src="./javascripts/angular-sanitize.min.js"></script>
+
+  	<!-- Auth0 dependencies -->
+  	<!-- We use client cookies to save the user credentials -->
+	<script src="//code.angularjs.org/1.2.16/angular-cookies.min.js"></script>
+
+	<!-- Auth0 Lock script and AngularJS module -->
+	<script src="//cdn.auth0.com/js/lock-8.2.min.js"></script>
+	<!-- angular-jwt and angular-storage -->
+	<script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
+	<script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+	<script src="//cdn.auth0.com/w2/auth0-angular-4.js"> </script>
+	
+	<!-- user-defined js files -->
+  	<script type="text/javascript" src="./dists/master.js"></script>
+  	<script type="text/javascript" src="./dists/club_info.js"></script>
+    <script src="./dists/edit-event.js"></script>
+    <script src="./javascripts/bootstrap-colorpicker-module.js"></script>
+    <script src="./javascripts/angular-wysiwyg.js"></script>
+    <script type="text/javascript" src="./javascripts/factories/society_info.js"></script>
+
+</body>
+</html>

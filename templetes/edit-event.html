@@ -1,0 +1,34 @@
+<section ng-app="app">
+  <h2 style="text-align: center; margin-bottom: 1em;">Edit Event</h2>
+  <h4 style="color: red; text-align: center">{{message}}</h4>
+    <div class="container">
+      <form ng-submit="submit()">
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="fa fa-diamond prefix"></i>
+            <input style="font-size: 15px;" id="icon_prefix" type="text" ng-model="event.event_name">
+            <label style="font-size: 13px;" for="icon_prefix">Event Name</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="fa fa-calendar prefix"></i>
+            <input style="font-size: 15px;" type="date" ng-model="event.event_date">
+          </div>
+          <div class="input-field col s12">
+            <i class="fa fa-file-text prefix"></i>
+            <input style="font-size: 15px;" type="text" ng-model="event.short_info">
+            <label style="font-size: 13px;">Short Info</label>
+          </div>
+        </div>
+        <wysiwyg textarea-id="question" textarea-class="form-control"  textarea-height="200px" textarea-name="textareaQuestion" textarea-required ng-model="event.event_info" enable-bootstrap-title="true"></wysiwyg>
+        <button type="submit" id="submit" value="submit" class="waves-effect waves-light btn" style="margin-top: 1em;">Submit</button>
+      </form>
+    </div>
+
+    <!-- <div ng-bind style="white-space:nowrap">{{event.event_info}}</div> -->
+
+    <!--Text Editor Stylesheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./dists/edit-event.css" />
+</section>
+

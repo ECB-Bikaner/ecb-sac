@@ -1,0 +1,23 @@
+/*Created By Ishan*/
+.club-info-text-white {
+  color: white;
+}
+@media only screen and (orientation: landscape){
+	.parallax-container {
+	  height: 50vh;
+	}
+}
+
+@media only screen and (orientation: portrait){
+	.parallax-container {
+	  height: 50vh;
+	}
+}
+
+#staggered-test > li{
+  opacity: 0;
+}
+
+#staggered-test2 > li{
+  opacity: 0;
+}

@@ -1,0 +1,17 @@
+<section class="event-background">
+   <div class="event-upper-background"></div>
+	<div class="container">
+   		<div class="event-page">
+   			<a class="btn red wave-light right" ng-click="delete(event)" ng-show="auth.profile.nickname && showDelete(event) ">Remove This Event</a>
+            <h3>{{event.event_name}}</h3>
+            <h5>{{event.event_date | date}}</h5>
+            <p style="margin: 0px" ng-bind-html="event.event_info"></p>
+   	  </div>
+	</div>
+	
+	<div class="container" id="disqus_thread"></div>
+
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	<link rel="stylesheet" type="text/css" href="./dists/all-club.css">
+	<script id="dsq-count-scr" src="//ecbsacapp.disqus.com/count.js" async></script>
+</section>

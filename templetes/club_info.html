@@ -1,0 +1,52 @@
+<section>
+  <div class="parallax-container">
+    <div class="parallax">
+      <img ng-src="{{club.logo}}" style="z-index: -1;">
+      <div class="container club-info-text-white valign-wrapper">
+        <div style="width:100vw; text-align:center;" class="valign club-info-text-white valign" >
+          <!-- <h2>Inferno</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section blue-grey">
+    <div class="container">
+    <div class="row">
+      <div class="col s12 m12 blue-grey club-info-text-white">
+        <div class="valign-wrapper">
+          <h3 class="valign">{{club.name}}</h3>
+        </div>
+        <p class="">{{club.info}}</p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Stay Tuned Amazing thing coming here -->
+
+  <div class="container" ng-controller="eventCtrl">
+    <div class="row">
+      <div class="col s12 m12">
+        <h5 style="margin-top: 30px">Upcoming Events</h5>
+      </div>
+    </div>
+    <ul class="collapsible" id="staggered-test" data-collapsible="accordion">
+      <li ng-repeat="event in events | orderBy: 'event_date'">
+       <div class=" blue-grey darken-2 collapsible-header club-info-text-white">
+            <span style="float: left;">{{event.event_name}}</span>
+            <span style="float: right;">{{event.event_date | date}}</span>
+         </div>
+       <div class="collapsible-body"><p>{{event.short_info}}<br><br><a class="btn waves-effect waves-light" href="#/clubs/event/{{event._id}}">More info</a></p></div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <b><h5 style="margin-top: 30px">Club Info</h5></b>
+    <p ng-bind-html="club.long_info"></p>
+  </div>
+
+
+  <link rel="stylesheet" type="text/css" href="./dists/club-info.css">
+</section>

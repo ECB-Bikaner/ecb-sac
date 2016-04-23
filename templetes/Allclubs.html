@@ -1,0 +1,47 @@
+<section>
+    <div class="blue-grey home-intro">
+        <div class="container">
+            <h3 class="home-intro-heading">{{firstname}}</h3>
+            <p class="home-intro-content">{{des}}</p>
+        </div>
+    </div>
+    <!-- <div class="body">
+    	  <div class="society"><h3>{{firstname}}</h3></div>
+    	  <div class="image_responsive">
+            <img ng-src="{{image}}">
+    	  </div>
+    	  <p class="description">{{des}}</p>
+    </div> -->
+    <div class="container">
+        <br><br>
+        <div ng-show="club"> 
+            <h3>Clubs</h3>
+            <p>These are all the clubs under this society.</p>
+        </div>
+        <div class=" row">
+            <div class="col s12 m6 l4"  ng-repeat="c in club" >
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light" >
+                        <img class="activator" alt="image not avilable" src="{{c.logo}}" >
+                    </div>
+                    <div class="card-content" >
+                        <span class="card-title activator grey-text text-darken-4">{{c.name}}<i class="material-icons right">more_vert</i></span>
+                        <p><a class="waves-effect waves-light btn blue-grey" href="#/{{id}}/{{c.id}}">More</a></p>
+                    </div>
+                    <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">{{c.name}}<i class="material-icons right">close</i></span>
+                          <p>{{c.info}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3>About {{firstname}}</h3>
+            <p ng-bind-html='full_description'></p>
+        </div>
+
+    </div>
+
+    <link rel="stylesheet" type="text/css" href="./dists/all-club.css">
+</section>
