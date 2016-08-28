@@ -1,4 +1,4 @@
-# ECB SAC Front End Client
+# ECB SAC Front End Client [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)] [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()
 This is Student Activity Center designed to help the student of Engineering College Bikaner to easily get information about the Upcoming event.
 ##How to run the app
 1. `git clone` the repository to your local machine.
