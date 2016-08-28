@@ -76,12 +76,21 @@ app.factory("society_factory", [function() {
 			name : "Sports and Games Society",
 			society_info : "Hello",
 			image : "./images/office.jpg",
-			description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+			description : 'Sports and Games Society responsible to encourage all students of the Institute to participate in games and sports activities of their choice. Society also administer games and sports activities on a day to day basis, and organizes the annual Sports Meet. Also conduct Inter-Department tournaments in the Institute and other inter-institutional activities and administer participation of GECB students in reputed national level sports competitions.',
 			id : 2,
 			full_description: '<div style="text-align: left;">• To encourage all students of the Institute to participate in games and sports activities of their choice.&nbsp;</div><div style="text-align: left;"><br></div><div style="text-align: left;"><span style="line-height: 1.42857;">• To administer games and sports activities on a day to day basis, and to organize the Annual Sports Meet.&nbsp;</span></div><div style="text-align: left;"><span style="line-height: 1.42857;"><br></span></div><div style="text-align: left;"><span style="line-height: 1.42857;">• To conduct Inter-Department tournaments in the Institute and other inter-institutional activities.&nbsp;</span></div><div style="text-align: left;"><span style="line-height: 1.42857;"><br></span></div><div style="text-align: left;"><span style="line-height: 1.42857;">• To administer participation of GECB students in reputed national level sports competitions.&nbsp;</span></div><div style="text-align: left;"><span style="line-height: 1.42857;"><br></span></div><div style="text-align: left;"><span style="line-height: 1.42857;">• To organize coaching of students in various disciplines of games and sports.&nbsp;</span></div><div style="text-align: left;"><span style="line-height: 1.42857;"><br></span></div><div style="text-align: left;"><span style="line-height: 1.42857;">• To organize sports activities among incoming students with an objective of inducting them into the student mainstream.&nbsp;</span></div><div style="text-align: left;"><span style="line-height: 1.42857;"><br></span></div><div style="text-align: left;"><span style="line-height: 1.42857;">• To identify, support and monitor satellite societies and clubs in the area of games and sports.&nbsp;</span></div><div style="text-align: left;"><span style="line-height: 1.42857;"><br></span></div><div style="text-align: left;"><span style="line-height: 1.42857;">• To organize annual marathon (on a specific event).&nbsp;</span></div><div style="text-align: left;"><span style="line-height: 1.42857;"><br></span></div><div style="text-align: left;"><span style="line-height: 1.42857;">• To maintain the society bulletin and renovate it periodically.&nbsp;</span></div><div style="text-align: left;"><span style="line-height: 1.42857;"><br></span></div><div style="text-align: left;"><span style="line-height: 1.42857;">• To organize Seminars, Workshop, training camps etc. on sports, games &amp; related areas.</span><br></div>',
 			color: "blue-grey",
 			alignment : "left",
-			club_ids : []
+			club_ids : [
+				{
+					id : 1,
+					name: "Sports and Games Club",
+					info: 'Sports and Games Club is dedicated to bring the sports activities to the students and encourage participation in this field.',
+					long_info: '',
+					imgSrc: ['/images/slider-bh-1.jpg','/images/slider-bh-2.jpg','/images/slider-bh-3.jpg'],
+					logo: ''
+				}
+			]
 		},
 		{
 			name : "Vocational Society",

@@ -7,8 +7,9 @@ This is Student Activity Center designed to help the student of Engineering Coll
 4. fire up your favourite browser and visit `localhost:3000`
 
 ## Contributing
-Currently the project is in its early stage. All the work is done inside `master` branch.
-You can submit your pull requests against `master` branch according to [standard github guidelines](https://help.github.com/articles/using-pull-requests/)
+Currently the project is in its early stage. All the work is done inside `dev` branch.
+
+You can submit your pull requests against `dev` branch according to [standard github guidelines](https://help.github.com/articles/using-pull-requests/)
 
 ##Licence
 Copyright (c) 2016, ECB SAC, MIT Licence.
