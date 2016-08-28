@@ -5,9 +5,10 @@ This is Student Activity Center designed to help the student of Engineering Coll
 2. `cd` into the repository.
 3. run `python -m SimpleHTTPServer 3000` for installing dependancy.
 4. fire up your favourite browser and visit `localhost:3000`
-## Contributing
 
+## Contributing
 Currently the project is in its early stage. All the work is done inside `master` branch.
 You can submit your pull requests against `master` branch according to [standard github guidelines](https://help.github.com/articles/using-pull-requests/)
+
 ##Licence
 Copyright (c) 2016, ECB SAC, MIT Licence.
