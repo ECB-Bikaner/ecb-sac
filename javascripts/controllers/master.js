@@ -54,7 +54,7 @@
 		$scope.auth = auth;
 	}]);
 
-	
+
 	app.controller('UserInfoCtrl',['$scope', 'auth', function UserInfoCtrl($scope, auth) {
 		$scope.auth = auth;
 	}]);
@@ -66,7 +66,8 @@
 
 	app.controller('HomeCtrl',['$scope','$http' ,'society_factory', function($scope, $http, society_factory){
 		$scope.societies = society_factory;
-		$http.get('/home').success(function(data){
+		$http.get('https://ecb-sac-back-end.rapidapi.io/home').success(function(data){
+			console.log(data);
 			$scope.home_events = data;
 		});
 
@@ -101,7 +102,7 @@
 		$scope.auth = auth;
 
 		$scope.delete = function(event) {
-			if(auth.profile.nickname === event.event_club){
+			if(auth.profile.nickname === event.eventClub){
 				$http.delete('/'+event._id).success(function(){
 					$window.location.href = '#/home';
 				});
@@ -109,7 +110,7 @@
 		};
 
 		$scope.showDelete = function(event) {
-			return auth.profile.nickname === event.event_club;
+			return auth.profile.nickname === event.eventClub;
 		};
 
 		/**
@@ -120,7 +121,7 @@
 		var disqus_config = function () {
 		this.page.url = "#/clubs/event/"+$stateParams.id; // Replace PAGE_URL with your page's canonical URL variable
 		this.page.identifier = $stateParams.id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-		
+
 		};
 
 		(function() { // DON'T EDIT BELOW THIS LINE
@@ -133,7 +134,7 @@
 		})();
 
 	}]);
-  
+
 
 //lalit's Allclub.js
 
@@ -150,7 +151,7 @@
 		$scope.full_description = selectedSociety.full_description;
 	}]);
 
- 
+
 // routing
 	app.config([
 	'$stateProvider',
@@ -179,7 +180,7 @@
 	    	.state('edit_event', {
 		        url: '/edit_event',
 		      	templateUrl: './templetes/edit-event.html',
-		      	controller: 'editEventCtrl', 
+		      	controller: 'editEventCtrl',
 		      	data: { requiresLogin: true }
 	    	})
 

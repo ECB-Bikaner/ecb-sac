@@ -1,7 +1,7 @@
 <div  style="background-image: url('./images/11.jpg'); background-repeat: no-repeat; background-size: cover;
 background-position: center; height: 95vh;">
 <div class="home-intro" style="height: 100%; background-color: rgba(96, 125, 139, 0.75);">
-	
+
 	<div class="container">
 		<h3 class="home-intro-heading animated fadeInLeft">Student Activity Center</h3>
 		<p class="home-intro-content animated fadeInLeft">Government Engineering College, Bikaner is one among the most renowned technical institutes of Rajasthan. The institute is known not only for academic excellence but also for offering superior opportunities to its students to participate in recreational and creative activities. These activities are administered through the Student Affairs Council (SAC), which serves as the nerve Centre of all cocurricular activities in the campus.</p>
@@ -16,17 +16,17 @@ background-position: center; height: 95vh;">
 </div>
 </div>
 <section style="margin-bottom: 50px" class="container">
-	
+
 	<div>
 		<h3 class="home-events-header">Upcoming Events</h3>
 		<p style="color:grey; font-size: 20px">These are upcoming events from all the clubs arrenged by earliest first.</p>
 		  <ul class="collapsible" data-collapsible="accordion">
-		      <li ng-repeat="event in home_events | orderBy: 'event_date' | limitTo: 10">
+		      <li ng-repeat="event in home_events | orderBy: 'eventDate' | limitTo: 10">
 		       <div class="blue-grey darken-2 white-text collapsible-header club-info-text-white">
-		            <span style="float: left;">{{event.event_name}}</span>
-		            <span style="float: right;">{{event.event_club}} | {{event.event_date | date}}</span>
+		            <span style="float: left;">{{event.eventName}}</span>
+		            <span style="float: right;">{{event.eventClub}} | {{event.eventDate | date}}</span>
 		         </div>
-		       <div class="collapsible-body"><p>{{event.short_info}}<br><br><a class="btn waves-effect waves-light" href="#/clubs/event/{{event._id}}">More info</a></p></div>
+		       <div class="collapsible-body"><p>{{event.shortInfo}}<br><br><a class="btn waves-effect waves-light" href="#/clubs/event/{{event._id}}">More info</a></p></div>
 		      </li>
 		  </ul>
 		  <p style="color:grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -61,4 +61,3 @@ background-position: center; height: 95vh;">
 		</div>
 	</div>
 </section>
-
