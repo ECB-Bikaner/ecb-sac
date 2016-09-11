@@ -1,6 +1,14 @@
 (function(){
 
-	var app = angular.module('sac',['ui.router', 'clubInfo', 'auth0', 'angular-storage', 'angular-jwt', 'edit_event', 'ngSanitize', 'society_info']);
+	var config = {
+    	apiKey: "AIzaSyDM5zCFUushGfH1X9E72f5kBXzJiHhdxOc",
+    	authDomain: "ecb-sac-back-end.firebaseapp.com",
+    	databaseURL: "https://ecb-sac-back-end.firebaseio.com",
+    	storageBucket: "ecb-sac-back-end.appspot.com",
+  	};
+  	firebase.initializeApp(config);
+
+	var app = angular.module('sac', ['ui.router', 'clubInfo', 'auth0', 'angular-storage', 'angular-jwt', 'edit_event', 'ngSanitize', 'society_info', 'firebase']);
 
 //Auth0 functions
 	app.config(function (authProvider) {
@@ -64,12 +72,14 @@
 	app.controller('HeaderCtrl', ['$scope', function($scope){
 	}]);
 
-	app.controller('HomeCtrl',['$scope','$http' ,'society_factory', function($scope, $http, society_factory){
+	app.controller('HomeCtrl',['$scope','$http' ,'society_factory', '$firebaseArray', function($scope, $http, society_factory, $firebaseArray){
 		$scope.societies = society_factory;
-		$http.get('https://ecb-sac-back-end.rapidapi.io/home').success(function(data){
-			console.log(data);
-			$scope.home_events = data;
-		});
+		var rootRef = firebase.database().ref().child('sac');
+		var ref = rootRef.child('events')
+		$scope.home_events = $firebaseArray(ref);
+		// $http.get('https://ecb-sac-back-end.rapidapi.io/home').success(function(data){
+		// 	$scope.home_events = data;
+		// });
 
 		$('.collapsible').collapsible({
       		accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
@@ -94,10 +104,14 @@
 	}]);
 
 //Event Controller
-	app.controller('EventCtrl',['$scope', '$http', '$stateParams', 'auth', '$window', function($scope, $http, $stateParams, auth, $window){
-		$http.get('/'+ $stateParams.id).success(function(data){
-			$scope.event = data;
-		});
+	app.controller('EventCtrl',['$scope', '$http', '$stateParams', 'auth', '$window', '$firebaseObject', function($scope, $http, $stateParams, auth, $window, $firebaseObject){
+		// $http.get('/'+ $stateParams.id).success(function(data){
+		// 	$scope.event = data;
+		// });
+
+		var rootRef = firebase.database().ref().child('sac');
+        var ref = rootRef.child('events').child($stateParams.id);
+        $scope.event = $firebaseObject(ref);
 
 		$scope.auth = auth;
 

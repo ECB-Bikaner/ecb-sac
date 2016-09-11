@@ -1,20 +1,21 @@
 <div  style="background-image: url('./images/11.jpg'); background-repeat: no-repeat; background-size: cover;
 background-position: center;">
-<div class="home-intro" style="height: 100%; background-color: rgba(96, 125, 139, 0.80);">
+	<div class="home-intro" style="height: 100%; background-color: rgba(96, 125, 139, 0.80);">
 
-	<div class="container">
-		<h3 class="home-intro-heading animated fadeInLeft">Student Activity Center</h3>
-		<p class="home-intro-content animated fadeInLeft">Government Engineering College, Bikaner is one among the most renowned technical institutes of Rajasthan. The institute is known not only for academic excellence but also for offering superior opportunities to its students to participate in recreational and creative activities. These activities are administered through the Student Affairs Council (SAC), which serves as the nerve Centre of all cocurricular activities in the campus.</p>
-		<br><br>
-		<!-- <h3 class="optional-content home-intro-heading right-align animated fadeInRight">Optional Content</h3>
-		<p class="optional-content home-intro-content right-align animated fadeInRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat.</p> -->
+		<div class="container">
+			<h3 class="home-intro-heading animated fadeInLeft">Student Activity Center</h3>
+			<p class="home-intro-content animated fadeInLeft">Government Engineering College, Bikaner is one among the most renowned technical institutes of Rajasthan. The institute is known not only for academic excellence but also for offering superior opportunities to its students to participate in recreational and creative activities. These activities are administered through the Student Affairs Council (SAC), which serves as the nerve Centre of all cocurricular activities in the campus.</p>
+			<br><br>
+			<!-- <h3 class="optional-content home-intro-heading right-align animated fadeInRight">Optional Content</h3>
+			<p class="optional-content home-intro-content right-align animated fadeInRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat.</p> -->
 
+		</div>
 	</div>
 </div>
-</div>
+
 <section style="margin-bottom: 50px" class="container">
 
 	<div>
@@ -25,7 +26,7 @@ background-position: center;">
 		            <span style="float: left;">{{event.eventName}}</span>
 		            <span style="float: right;">{{event.eventClub}} | {{event.eventDate | date}}</span>
 		         </div>
-		       <div class="collapsible-body"><p>{{event.shortInfo}}<br><br><a class="btn waves-effect waves-light" href="#/clubs/event/{{event._id}}">More info</a></p></div>
+		       <div class="collapsible-body"><p>{{event.shortInfo}}<br><br><a class="btn waves-effect waves-light" href="#/clubs/event/{{event.$id}}">More info</a></p></div>
 		      </li>
 		  </ul>
 		  <!-- <p style="color:grey">Above events are arrenged by latest event first. These are only 10 latest events from all the societies and clubs.</p> -->
