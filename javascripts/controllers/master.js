@@ -77,7 +77,17 @@
 		var rootRef = firebase.database().ref().child('sac');
 		var ref = rootRef.child('events');
 		var query = ref.orderByChild("eventDate").limitToLast(10).startAt(Date.now());
-		$scope.home_events = $firebaseArray(query);
+		var eventList = $firebaseArray(query);
+		$scope.loading = true;
+		eventList.$loaded()
+		.then(function(x) {
+			$scope.home_events = x;
+			$scope.loading = false;
+		})
+		.catch(function(error) {
+			console.log("Error:", error);
+		});
+		console.log()
 		// $http.get('https://ecb-sac-back-end.rapidapi.io/home').success(function(data){
 		// 	$scope.home_events = data;
 		// });

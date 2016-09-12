@@ -20,6 +20,9 @@ background-position: center;">
 
 	<div>
 		<h4 class="home-events-header">Upcoming Events</h4>
+		<div ng-if="loading">
+			Loading...
+		</div>
 		  <ul class="collapsible" data-collapsible="accordion">
 		      <li ng-repeat="event in home_events | orderBy: 'eventDate' | limitTo: 10">
 		       <div class="blue-grey darken-2 white-text collapsible-header club-info-text-white">
