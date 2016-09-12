@@ -170,6 +170,11 @@
 		$scope.full_description = selectedSociety.full_description;
 	}]);
 
+//scorlling to top
+	var scrollContent = function() {
+		window.scrollTo(0,0);
+	}
+
 
 // routing
 	app.config([
@@ -181,38 +186,44 @@
 	        .state('home', {
 		        url: '/home',
 		      	templateUrl: './templetes/home.html',
-		      	controller: 'HomeCtrl'
+		      	controller: 'HomeCtrl',
+		      	onEnter: scrollContent
 	    	})
 
 	    	.state('gallery', {
 		        url: '/gallery',
 		      	templateUrl: './templetes/gallery.html',
-		      	controller: 'GalleryCtrl'
+		      	controller: 'GalleryCtrl',
+		      	onEnter: scrollContent
 	    	})
 
 	    	.state('club_info', {
 		        url: '/{society_id}/{club_id}',
 		      	templateUrl: './templetes/club_info.html',
-		      	controller: 'ClubInfoController'
+		      	controller: 'ClubInfoController',
+		      	onEnter: scrollContent
 	    	})
 
 	    	.state('edit_event', {
 		        url: '/edit_event',
 		      	templateUrl: './templetes/edit-event.html',
 		      	controller: 'editEventCtrl',
-		      	data: { requiresLogin: true }
+		      	data: { requiresLogin: true },
+		      	onEnter: scrollContent
 	    	})
 
 	    	.state('event', {
 		        url: '/clubs/event/{id}',
 		      	templateUrl: './templetes/event.html',
-		      	controller: 'EventCtrl'
+		      	controller: 'EventCtrl',
+		      	onEnter: scrollContent
 	    	})
 
 	    	.state('all_club', {
 				url: '/{id}',
 		      	templateUrl: './templetes/Allclubs.html',
-		      	controller: 'Allclubs'
+		      	controller: 'Allclubs',
+		      	onEnter: scrollContent
 	    	})
 
 	    	.state('/', {
