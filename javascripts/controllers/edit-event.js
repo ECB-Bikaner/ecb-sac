@@ -15,7 +15,7 @@ app.controller('editEventCtrl', ['$scope', '$http', 'auth', '$window', '$firebas
         if ($scope.event.eventInfo && $scope.event.eventName && $scope.event.eventDate && $scope.event.shortInfo ) {
           // $scope.event_list.push($scope.event);
           var x = $scope.event.eventDate
-          $scope.event.eventDate = (new Date(x)).toDateString();
+          $scope.event.eventDate = Date.parse(x);
           var rootRef = firebase.database().ref().child('sac');
           var ref = rootRef.child('events')
           var list = $firebaseArray(ref);

@@ -75,8 +75,9 @@
 	app.controller('HomeCtrl',['$scope','$http' ,'society_factory', '$firebaseArray', function($scope, $http, society_factory, $firebaseArray){
 		$scope.societies = society_factory;
 		var rootRef = firebase.database().ref().child('sac');
-		var ref = rootRef.child('events')
-		$scope.home_events = $firebaseArray(ref);
+		var ref = rootRef.child('events');
+		var query = ref.orderByChild("eventDate").limitToLast(10).startAt(Date.now());
+		$scope.home_events = $firebaseArray(query);
 		// $http.get('https://ecb-sac-back-end.rapidapi.io/home').success(function(data){
 		// 	$scope.home_events = data;
 		// });
@@ -117,7 +118,11 @@
 
 		$scope.delete = function(event) {
 			if(auth.profile.nickname === event.eventClub){
-				$http.delete('/'+event._id).success(function(){
+				// $http.delete('/'+event._id).success(function(){
+				// 	$window.location.href = '#/home';
+				// });
+				$scope.event.$remove().then(function(ref) {
+					console.log("Removed");
 					$window.location.href = '#/home';
 				});
 			}
