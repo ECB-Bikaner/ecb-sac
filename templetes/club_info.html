@@ -37,7 +37,7 @@
             <span style="float: left;">{{event.eventName}}</span>
             <span style="float: right;">{{event.eventDate | date}}</span>
          </div>
-       <div class="collapsible-body"><p>{{event.shortInfo}}<br><br><a class="btn waves-effect waves-light" href="#/clubs/event/{{event._id}}">More info</a></p></div>
+       <div class="collapsible-body"><p>{{event.shortInfo}}<br><br><a class="btn waves-effect waves-light" href="#/clubs/event/{{event.$id}}">More info</a></p></div>
       </li>
     </ul>
   </div>
@@ -46,7 +46,5 @@
     <b><h5 style="margin-top: 30px">Club Info</h5></b>
     <p ng-bind-html="club.long_info"></p>
   </div>
-
-
   <link rel="stylesheet" type="text/css" href="./dists/club-info.css">
 </section>
