@@ -1,10 +1,10 @@
 (function(){
 
 	var config = {
-    	apiKey: "AIzaSyDM5zCFUushGfH1X9E72f5kBXzJiHhdxOc",
-    	authDomain: "ecb-sac-back-end.firebaseapp.com",
-    	databaseURL: "https://ecb-sac-back-end.firebaseio.com",
-    	storageBucket: "ecb-sac-back-end.appspot.com",
+    	apiKey: "***************",
+    	authDomain: "***************",
+    	databaseURL: "***************",
+    	storageBucket: "***************",
   	};
   	firebase.initializeApp(config);
 
