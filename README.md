@@ -13,6 +13,7 @@ This is Student Activity Center designed to help the student of Engineering Coll
 3. for python `2.7.x` run `python -m SimpleHTTPServer 3000`.
 4. for python `3.x.x` run `python -m simple.http 3000`.
 4. fire up your favourite browser and visit `localhost:3000`
+
 >Currently the project is in its early stage. All the work is done inside `dev` branch.
 You can submit your pull requests against `dev` branch according to [standard github guidelines](https://help.github.com/articles/using-pull-requests/)
 
