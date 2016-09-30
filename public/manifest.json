@@ -2,7 +2,7 @@
   "name": "Student's Affairs Counsil",
   "short_name": "ECB SAC",
   "theme_color": "#455a64",
-  "background_color": "#607d8b",
+  "background_color": "#455a64",
   "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
