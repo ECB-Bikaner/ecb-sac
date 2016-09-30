@@ -76,7 +76,7 @@
 		$scope.societies = society_factory;
 		var rootRef = firebase.database().ref().child('sac');
 		var ref = rootRef.child('events');
-		var query = ref.orderByChild("eventDate").limitToLast(10).startAt(Date.now());
+		var query = ref.orderByChild("eventDate").limitToLast(10).startAt(Date.now() - 86400000);
 		var eventList = $firebaseArray(query);
 		$scope.loading = true;
 		eventList.$loaded()
