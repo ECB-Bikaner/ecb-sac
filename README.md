@@ -1,6 +1,6 @@
 ## [ECB SAC Front End Client](http://www.ecbsac.org) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ECB-Bikaner/ECB-bikaner.github.io/issues)
 This is Student Activity Center designed to help the student of Engineering College Bikaner to easily get information about the Upcoming event.
-> In case above URL does not work, you can access testing version of this app at https://ecb-sac-back-end.firebaseapp.com/
+> In case above URL does not work, you can access testing version of this app at https://ecb-sac-back-end.firebaseapp.com/ and for more information visit [TechWhoop](https://www.techwhoop.com)
 
 ### Technologies Used/Needed
 - Firebase
